@@ -1,2 +1,2 @@
 # My-first-website
-a responsive web application built with HTML,CSS, and JavaScript
+a responsive web application built with HTML and CSS
