@@ -1,0 +1,340 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aurora Wireless Headphones</title>
+  <style>
+    :root {
+      --primary: #6c5ce7;
+      --secondary: #a29bfe;
+      --dark: #2d3436;
+      --light: #f8f9fa;
+      --accent: #fd79a8;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      color: var(--dark);
+      line-height: 1.7;
+    }
+
+    /* Fixed Navbar */
+    #header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      padding: 15px 0;
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    #header-img {
+      height: 60px;
+      transition: transform 0.3s ease;
+    }
+
+    #header-img:hover {
+      transform: scale(1.1);
+    }
+
+    #nav-bar ul {
+      display: flex;
+      list-style: none;
+    }
+
+    .nav-link {
+      color: var(--dark);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 12px 25px;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+      margin-left: 10px;
+    }
+
+    .nav-link:hover {
+      background: var(--primary);
+      color: white;
+    }
+
+    /* Hero Section */
+    #hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+      background: linear-gradient(rgba(108, 92, 231, 0.75), rgba(162, 155, 254, 0.65)),
+                  url('https://www.insidehook.com/wp-content/uploads/2023/06/Budget-Headphones-Hero.jpg?fit=1200%2C675');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      margin-top: 80px;
+    }
+
+    #hero h1 {
+      font-size: 4.5rem;
+      margin-bottom: 20px;
+      text-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    }
+
+    #hero p {
+      font-size: 1.6rem;
+      max-width: 800px;
+      margin-bottom: 40px;
+    }
+
+    /* Features Section */
+    #features {
+      padding: 120px 40px;
+      background: white;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.8rem;
+      margin-bottom: 80px;
+      color: var(--primary);
+    }
+
+    .features-grid {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      max-width: 1400px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
+
+    .feature-card {
+      flex: 1;
+      min-width: 300px;
+      text-align: center;
+      padding: 40px 25px;
+      background: var(--light);
+      border-radius: 24px;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.1);
+      transition: transform 0.4s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-20px);
+    }
+
+    .feature-card img {
+      width: 100%;
+      max-height: 220px;
+      object-fit: contain;
+      border-radius: 16px;
+      margin-bottom: 25px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    .feature-card h3 {
+      margin: 20px 0;
+      color: var(--primary);
+      font-size: 1.6rem;
+    }
+
+    /* Video Section */
+    #video-section {
+      padding: 120px 40px;
+      background: var(--light);
+      text-align: center;
+    }
+
+    #video {
+      width: 100%;
+      max-width: 900px;
+      height: 500px;
+      border: none;
+      border-radius: 24px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+    }
+
+    /* Newsletter */
+    #pricing {
+      padding: 120px 40px;
+      background: white;
+    }
+
+    #form {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    #form h2 {
+      margin-bottom: 30px;
+      color: var(--primary);
+      font-size: 2.2rem;
+    }
+
+    #email {
+      width: 100%;
+      max-width: 420px;
+      padding: 18px 25px;
+      border: 2px solid #ddd;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      margin-bottom: 25px;
+      outline: none;
+      transition: border 0.3s;
+    }
+
+    #email:focus {
+      border-color: var(--primary);
+    }
+
+    #submit {
+      background: var(--accent);
+      color: white;
+      padding: 18px 45px;
+      border: none;
+      border-radius: 50px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    #submit:hover {
+      background: #ff6b9d;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--dark);
+      color: white;
+      text-align: center;
+      padding: 50px;
+      font-size: 1rem;
+    }
+
+    /* Media Query - Confirmed */
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+        padding: 0 20px;
+      }
+
+      #nav-bar ul {
+        margin-top: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .nav-link {
+        padding: 10px 18px;
+        margin: 5px;
+        font-size: 0.95rem;
+      }
+
+      #hero h1 {
+        font-size: 3.2rem;
+      }
+
+      #hero p {
+        font-size: 1.3rem;
+      }
+
+      .features-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      #video {
+        height: 300px;
+      }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header id="header">
+    <div class="header-container">
+      <!-- Updated with a clean headphones logo -->
+      <img id="header-img" src="https://i.etsystatic.com/13221305/r/il/42d2ef/2315129357/il_570xN.2315129357_bddk.jpg" alt="Aurora Headphones Logo">
+      <nav id="nav-bar">
+        <ul>
+          <li><a class="nav-link" href="#features">Features</a></li>
+          <li><a class="nav-link" href="#video-section">How It Works</a></li>
+          <li><a class="nav-link" href="#pricing">Get Notified</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section id="hero">
+    <h1>Aurora Wireless Headphones</h1>
+    <p>Experience pure audio freedom with premium noise-cancelling, exceptional comfort, and stunning design.</p>
+  </section>
+
+  <section id="features">
+    <h2 class="section-title">Premium Features</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <img src="https://media.gettyimages.com/id/1411749124/photo/stylish-blue-headphones.jpg?s=612x612&w=gi&k=20&c=SsPj84sayXIi9NFlbevQ5K5tVS0Ugv9Yc9k6R7Co62s=" alt="Stylish Blue Headphones">
+        <h3>Stunning Design</h3>
+        <p>Elegant, modern aesthetics with premium materials built to impress.</p>
+      </div>
+      <div class="feature-card">
+        <img src="https://cdn.thewirecutter.com/wp-content/media/2023/07/bluetoothheadphones-2048px-0876.jpg?auto=webp&quality=75&width=1024" alt="Top Bluetooth Headphones">
+        <h3>Superior Sound</h3>
+        <p>Crystal-clear audio with deep bass and crisp highs, tuned for perfection.</p>
+      </div>
+      <div class="feature-card">
+        <img src="https://images.pexels.com/photos/3394667/pexels-photo-3394667.jpeg" alt="Person enjoying music with headphones">
+        <h3>All-Day Comfort</h3>
+        <p>Soft ear cushions and lightweight design for hours of comfortable listening.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="video-section">
+    <h2 class="section-title">See Aurora in Action</h2>
+    <iframe id="video" src="https://www.youtube.com/embed/y881tEpkyjA" title="Aurora Headphones Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </section>
+
+  <section id="pricing">
+    <h2 class="section-title">Join the Waitlist</h2>
+    <form id="form" action="https://www.freecodecamp.org/email-submit" method="POST">
+      <h2>Be the first to experience Aurora</h2>
+      <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+      <br>
+      <input type="submit" id="submit" value="Notify Me">
+    </form>
+  </section>
+
+  <footer id="footer">
+    &copy; 2025 Aurora Headphones. Crafted for sound lovers.
+  </footer>
+
+</body>
+</html>
+
+
